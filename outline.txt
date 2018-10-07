@@ -1,0 +1,80 @@
+Rubyville v1.0
+
+Idea: Sim City-like written in Ruby. Just text.
+
+The minimal viable product:
+
+    100% Show a title screen
+    100% Show player a prompt
+    100% Allow player to start the game
+    100% Show the player a map of a 10x10 grid (1 - 10 / 1 - 10)
+        100% In ASCI characters, representing type of structure on location
+        100% or "V" is vacant
+    100% Have a player object (or city object?)
+    100% Give the player an amount of money
+        100% Shown in prompt: "$10000 :>"
+    100% Allow the player to choose a location to build a structure
+        (residential [R], commercial [C], civic [G], industrial [I], road[|])
+        "build c [x] [y]"
+    100% Allow the player to build structure given enough money
+    100% Change amount of money a player has
+    100% Show revised map to player
+    100% Have a help screen
+    100% Show a player the help screen
+    100% Allow player to see map at any given time
+    100% Allow player to quit game
+
+Resources:
+
+    Game Object
+        initialize new game engine
+        prompt()
+    Game Engine Object
+        initialize new map
+        .start_game()
+        .end_game()
+    Map Object
+        initialize
+            fill map hash with vacant rooms
+        .show_map()
+        { roomId => roomObject}
+    Buildings Object
+        initialize
+            create type
+    Player Object
+        initialize
+            give cash
+        .build(type, location, money)
+            build hits building object
+            if valid (enough money) value added at location to map hash
+            map is redrawn
+
+Questions:
+
+    Where does the prompt live?
+        Is it in the engine? Grabbing stuff all the time?
+        Does it exist in each class object? seems anti-dry
+        as of right now (10/5/18) let's let it live in engine.
+
+    What is the difference between game and engine?
+        Game is like the ingition for the engine
+        Engine keeps the pieces moving
+
+Current Problems:
+
+Fixed - Build location not working exactly right
+        eg. build i 2 6 builds at index 12 rather than row 2 column 6
+        Solution: build algorithm: [x] + (y * 10 - 10) = location in map
+        Note: 10 may need to be substituted for some variable
+        in order to achieve any scalability of map size
+
+Partially Fixed - Player can start new game in the middle of a game
+                    This is okay, but there should be a confirmation of this
+                    *Still need a reset game ability
+Fixed - Map is uneven
+        Solution: added more spaces / conditionals to printing map
+        Note: not sure how scalable this is, especially once variable map sizes are added
+Fixed - Player can see map before game has begun
+            Need to create a check for game status
+        Need a catch for bad build inputs
+            eg. "build C 2 3"    
