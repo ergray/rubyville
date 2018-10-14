@@ -1,6 +1,7 @@
 require './engine.rb'
 require './map.rb'
 require './city.rb'
+require './clock.rb'
 
 class Game
 

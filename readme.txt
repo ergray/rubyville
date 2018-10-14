@@ -2,7 +2,19 @@ Written in ruby v2.3.7p456
 
 Throw all of this in one folder and 'ruby main.rb' from your terminal!
 
-v1 Is just the foundation for the game.
+v2 (10.14.18)
+
+    Buildings have stats that add to production
+    Clock class added to game to keep track of mechanical time (future version will be more real-time)
+    Every four 'actions' buildings produce
+    Players can see production levels in game prompt
+    Updated help menu to reflect building stats
+    Game over occurs at two points (low happiness and income < upkeep while low on cash)
+    Added a wait action to skip ticks
+
+v1 (10.7.18)
+
+    Just the foundation for the game.
     Player can start a game. 
     Build a structure on the city map, with funds withdrawn.
     Map can be shown at will.

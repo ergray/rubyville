@@ -1,6 +1,44 @@
-Rubyville v1.0
+Rubyville Current v1.0
 
 Idea: Sim City-like written in Ruby. Just text.
+
+V2.0 plans
+
+Goal: Improve functionality of foundation to make something that actually feels like a game.
+      eg. Have a score or end game conditions
+      
+MVP for 2.0:
+
+    100% Add population statistic
+    100% Add happiness statistic
+    100% Add upkeep to buildings
+    100% Add timing mechanism to track upkeep and income tics
+        -this is not in real time and is based on builds / pauses
+        -future version to work in real time
+    100%  Map consists of a hash of structure objects rather than just text
+    Skipping - Structures are aware of surroundings w/in two squares
+        -I have an algorithm for this but this needs to work with roads
+        -Will be a future version
+    Skipping - Structures influence output of other structures based on proximity
+        -Belongs with version above
+    Skipping - Roads are necessary to connect buildings to one another
+        -Belongs with version above
+    100% Add structure objects as children of Structure class
+    100% Residential areas build population
+    100% Industrial areas build income
+    100% Commercial areas build happiness / income
+    100% Government areas build small happiness / income
+    100% Game over screen when player reaches -25% of starting income or -10 happiness
+
+Issues:
+
+    Fixed - Confirm players can't do game related actions while game has not started
+        ie. build
+
+
+
+
+V1.0 plans
 
 The minimal viable product:
 
@@ -76,5 +114,7 @@ Fixed - Map is uneven
         Note: not sure how scalable this is, especially once variable map sizes are added
 Fixed - Player can see map before game has begun
             Need to create a check for game status
-        Need a catch for bad build inputs
-            eg. "build C 2 3"    
+Fixed -       Need a catch for bad build inputs
+            eg. "build C 2 3"  
+
+  
