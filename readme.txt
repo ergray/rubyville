@@ -1,6 +1,10 @@
 Written in ruby v2.3.7p456
 
-Throw all of this in one folder and 'ruby main.rb' from your terminal!
+
+v2.1 (10.14.18)
+
+    Restructured files
+    Added a gemspec file / gem
 
 v2 (10.14.18)
 
