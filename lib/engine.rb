@@ -1,4 +1,4 @@
-require './clock.rb'
+require 'clock.rb'
 
 class Engine
 

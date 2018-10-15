@@ -1,5 +1,5 @@
-require './map'
-require './structure'
+require 'map.rb'
+require 'structure.rb'
 
 class City
 
